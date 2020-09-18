@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="template-simple-KBase" packages="template-dtable,ruletemplate.simple">
+        <ruleTemplate dtable="template-dtable/template-data.xls" template="template-dtable/customer-classification-simple.drt" row="3" col="2" />
+        <ksession name="templateSimpleKsession" />
+    </kbase>
+    <kbase name="template-db-KBase" default="true" packages="ruletemplate.db">
+        <ksession name="dbKieSession" default="true" />
+    </kbase>
+</kmodule>

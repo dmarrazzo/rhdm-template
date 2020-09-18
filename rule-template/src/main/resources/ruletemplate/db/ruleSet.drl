@@ -1,0 +1,36 @@
+package ruletemplate.db;
+import com.redhat.example.Customer;
+
+rule "Categorize Customers_0"
+no-loop true
+when
+    $c: Customer(age >= 18, age <= 21, category == Customer.Category.NA)
+then
+    modify ($c){ setCategory(Customer.Category.NA)};
+end
+
+rule "Categorize Customers_1"
+no-loop true
+when
+    $c: Customer(age >= 22, age <= 30, category == Customer.Category.NA)
+then
+    modify ($c){ setCategory(Customer.Category.BRONZE)};
+end
+
+rule "Categorize Customers_2"
+no-loop true
+when
+    $c: Customer(age >= 31, age <= 40, category == Customer.Category.NA)
+then
+    modify ($c){ setCategory(Customer.Category.SILVER)};
+end
+
+rule "Categorize Customers_3"
+no-loop true
+when
+    $c: Customer(age >= 41, age <= 150, category == Customer.Category.NA)
+then
+    modify ($c){ setCategory(Customer.Category.GOLD)};
+end
+
+
